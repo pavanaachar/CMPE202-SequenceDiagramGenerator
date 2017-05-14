@@ -1,0 +1,18 @@
+Build the source files with AspectJ compiler as shown below:
+
+ajc -cp "<<PATH_to_aspectjrt_jar_file>>;<<PATH_to_plantuml_jar_file>>" -<<aspectj_version>> -sourceroots .
+
+Run the main class using AspectJ:
+
+aj -cp "<<PATH_to_aspectjweaver_jar_file>>;<<PATH_to_plantuml_jar_file>>" Main
+
+
+The sources have been tested with AspectJ 1.8.
+
+The command line used to compile and run the Main class on a windows system is shown below as an example:
+
+Compile:
+ajc -cp "C:\aspectj1.8\lib\aspectjrt.jar;C:\temp\jars\plantuml.2017.11.jar" -1.8 -sourceroots .
+
+Run:
+ajc -cp "C:\aspectj1.8\lib\aspectjweaver.jar;C:\temp\jars\plantuml.2017.11.jar" Main
