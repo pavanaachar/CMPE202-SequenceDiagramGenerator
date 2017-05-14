@@ -1,0 +1,95 @@
+@startuml
+autonumber
+[-> Main: main(args : String[]) :void
+activate Main
+Main -> TheEconomy: setState(status : String) :void
+activate TheEconomy
+TheEconomy -> TheEconomy: notifyObservers() :void
+activate TheEconomy
+TheEconomy <-- TheEconomy
+deactivate TheEconomy
+Main <-- TheEconomy
+deactivate TheEconomy
+Main -> TheEconomy: attach(obj : Observer) :void
+activate TheEconomy
+Main <-- TheEconomy
+deactivate TheEconomy
+Main -> TheEconomy: attach(obj : Observer) :void
+activate TheEconomy
+Main <-- TheEconomy
+deactivate TheEconomy
+Main -> TheEconomy: setState(status : String) :void
+activate TheEconomy
+TheEconomy -> TheEconomy: notifyObservers() :void
+activate TheEconomy
+TheEconomy -> Pessimist: update() :void
+activate Pessimist
+Pessimist -> TheEconomy: getState() :String
+activate TheEconomy
+Pessimist <-- TheEconomy:The New iPad is out today
+deactivate TheEconomy
+Pessimist -> TheEconomy: getState() :String
+activate TheEconomy
+Pessimist <-- TheEconomy:The New iPad is out today
+deactivate TheEconomy
+TheEconomy <-- Pessimist
+deactivate Pessimist
+TheEconomy -> Optimist: update() :void
+activate Optimist
+Optimist -> TheEconomy: getState() :String
+activate TheEconomy
+Optimist <-- TheEconomy:The New iPad is out today
+deactivate TheEconomy
+Optimist -> TheEconomy: getState() :String
+activate TheEconomy
+Optimist <-- TheEconomy:The New iPad is out today
+deactivate TheEconomy
+TheEconomy <-- Optimist
+deactivate Optimist
+TheEconomy <-- TheEconomy
+deactivate TheEconomy
+Main <-- TheEconomy
+deactivate TheEconomy
+Main -> TheEconomy: setState(status : String) :void
+activate TheEconomy
+TheEconomy -> TheEconomy: notifyObservers() :void
+activate TheEconomy
+TheEconomy -> Pessimist: update() :void
+activate Pessimist
+Pessimist -> TheEconomy: getState() :String
+activate TheEconomy
+Pessimist <-- TheEconomy:Hey, Its Friday!
+deactivate TheEconomy
+Pessimist -> TheEconomy: getState() :String
+activate TheEconomy
+Pessimist <-- TheEconomy:Hey, Its Friday!
+deactivate TheEconomy
+TheEconomy <-- Pessimist
+deactivate Pessimist
+TheEconomy -> Optimist: update() :void
+activate Optimist
+Optimist -> TheEconomy: getState() :String
+activate TheEconomy
+Optimist <-- TheEconomy:Hey, Its Friday!
+deactivate TheEconomy
+Optimist -> TheEconomy: getState() :String
+activate TheEconomy
+Optimist <-- TheEconomy:Hey, Its Friday!
+deactivate TheEconomy
+TheEconomy <-- Optimist
+deactivate Optimist
+TheEconomy <-- TheEconomy
+deactivate TheEconomy
+Main <-- TheEconomy
+deactivate TheEconomy
+Main -> Pessimist: showState() :void
+activate Pessimist
+Main <-- Pessimist
+deactivate Pessimist
+Main -> Optimist: showState() :void
+activate Optimist
+Main <-- Optimist
+deactivate Optimist
+[<--Main
+deactivate Main
+@enduml
